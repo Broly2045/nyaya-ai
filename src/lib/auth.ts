@@ -31,7 +31,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         await connectToDatabase();
         const user = await User.findOne({
           email: parsed.data.email.toLowerCase(),
-        });
+        }).select("+password");
 
         if (!user?.password) return null;
 

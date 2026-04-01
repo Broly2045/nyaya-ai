@@ -33,7 +33,7 @@ export default function RegisterPage() {
         router.push("/login"); // redirect to login on success
       } else {
         const data = await res.json();
-        setError(data.message || "Registration failed");
+        setError(data.error ? `${data.message}: ${data.error}` : data.message || "Registration failed");
       }
     } catch (err) {
       setError("An error occurred during registration");
