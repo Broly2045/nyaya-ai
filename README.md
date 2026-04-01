@@ -2,7 +2,6 @@
 
 Nyaya-AI is a state-of-the-art **Legal Document Intelligence** platform designed to bridge the gap between complex Indian statutes and actionable legal insights. Built for lawyers, researchers, and litigants, it leverages the high-speed reasoning of **Llama 3.3** (via Groq) to analyze documents against the **Bharatiya Nyaya Sanhita (BNS)**, CPC, and the Constitution.
 
-![Nyaya-AI Dashboard](https://raw.githubusercontent.com/Broly2045/nyaya-ai/main/public/nav-logo.png) *(Note: Replace with actual screenshot path if available)*
 
 ## ✨ Premium Features
 
