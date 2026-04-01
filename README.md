@@ -5,10 +5,11 @@ Nyaya-AI is a next-generation Legal Document Analysis platform built to democrat
 It boasts a gorgeous, highly-responsive Tailwind CSS interface engineered for zero-friction user-experience. 
 
 ## ✨ Key Features
+* **Autonomous Legal Drafting Agent**: Provide basic case facts and let the specialized AI instantly stream fully-formatted, court-ready legal documents (Bail Applications, Legal Notices, Petitions) with perfect statutory citations.
 * **AI-Powered Clause Extraction**: Automatically unpacks complex legal PDFs and DOCX files into readable chunks.
 * **Risk & Liability Scoring**: Every document receives a comprehensive Risk Score with specific 'Key Findings' categorizing risks by High, Medium, or Low severity.
 * **Document Chat Engine (LPU)**: Stop skimming pages. Ask the embedded AI chat-bot exact legal questions about the document and receive contextual, localized legal feedback instantly.
-* **Premium Dashboard UI**: Manage your Vault, analyze your API usage limits, and delete documents with beautiful glassmorphic micro-animations.
+* **Premium Dashboard UI**: Manage your Vault, analyze your API usage limits, and navigate with a fast, edge-optimized application featuring beautiful glassmorphic micro-animations.
 
 ## 🛠 Tech Stack
 * **Framework**: Next.js 14 (App Router)
