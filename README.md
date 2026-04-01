@@ -9,7 +9,7 @@ Nyaya-AI is a state-of-the-art **Legal Document Intelligence** platform designed
 *   **🔍 Precision Clause Extraction**: Seamlessly ingest PDFs and DOCX files. Nyaya-AI identifies critical clauses, obligations, and liabilities with high accuracy.
 *   **⚖️ Statuatory Mapping**: Automatically cross-references findings with the latest Indian legal codes, providing context for **BNS 2023**, **BNSS 2023**, and classic frameworks like the **IPC** and **CPC**.
 *   **💬 Interactive Case Chat**: Interrogate your documents in plain English or Hindi. Ask about limitation periods, default bail eligibility, or case merits with instant, cited responses.
-*   **🛡️ Secure Document Vault**: An encrypted workspace to manage your case files, track analysis history, and monitor your AI usage limits.
+*   **🛡️ Document Management Workspace**: A dedicated dashboard to upload, manage, and track your legal case files and AI analysis history in a clean, professional interface.
 
 ## 🛠 Modern Tech Stack
 
