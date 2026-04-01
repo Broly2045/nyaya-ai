@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: nyaya-ai
-  labels:
-    app: nyaya-ai
