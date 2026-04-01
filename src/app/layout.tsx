@@ -21,6 +21,8 @@ export const metadata: Metadata = {
   keywords: ["Indian law", "legal AI", "FIR analysis", "bail application", "BNS", "BNSS", "Indian courts"],
 };
 
+import NextTopLoader from "nextjs-toploader";
+
 export default function RootLayout({
   children,
 }: {
@@ -28,7 +30,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <NextTopLoader color="#E87213" showSpinner={false} />
+        {children}
+      </body>
     </html>
   );
 }
