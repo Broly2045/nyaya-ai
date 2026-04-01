@@ -350,8 +350,34 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ═══ FEATURES OVERVIEW ═══ */}
+      <section id="features" className="section" style={{ paddingBottom: "2rem" }}>
+        <div className="eyebrow" data-fade style={{ textAlign: "center" }}>Platform Capabilities</div>
+        <h2 className="section-title" data-fade style={{ textAlign: "center", marginBottom: "3rem" }}>Everything you need<br />to win your case.</h2>
+        
+        <div className="how-grid" data-fade style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2rem" }}>
+          <div className="how-step p-8 bg-[#0B162E]/50 rounded-2xl border border-[#152142] hover:border-[#E87213]/50 transition-colors">
+            <h3 className="text-[#F5EDD8] text-xl mb-3 font-serif">Deep Liability Extraction</h3>
+            <p className="text-[#7A7E96] leading-relaxed text-sm">Instantly parses massive PDFs and DOCX files. Automatically flags legally risky clauses based on BNS, BNSS, and CPC codes.</p>
+          </div>
+          <div className="how-step p-8 bg-[#0B162E]/50 rounded-2xl border border-[#152142] hover:border-[#E87213]/50 transition-colors">
+            <h3 className="text-[#F5EDD8] text-xl mb-3 font-serif">Conversational LPU Chat</h3>
+            <p className="text-[#7A7E96] leading-relaxed text-sm">Stop rereading files. Ask our AI direct questions about any uploaded document in Hindi or English to get instant, cited answers.</p>
+          </div>
+          <div className="how-step p-8 bg-[#152142]/40 rounded-2xl border border-[#E87213]/50 relative overflow-hidden shadow-[0_0_20px_rgba(232,114,19,0.05)]">
+             <div className="absolute top-0 right-0 bg-gradient-to-l from-[#E87213] to-[#D0610A] text-white text-[0.65rem] tracking-wider font-bold px-4 py-1.5 rounded-bl-xl shadow-lg">JUST ADDED</div>
+            <h3 className="text-[#E87213] text-xl mb-3 font-serif">Autonomous AI Drafter</h3>
+            <p className="text-[#C8BDA4] leading-relaxed text-sm">Type the facts of your case and let our specialized LLM auto-generate structured, court-ready Bail Applications and Legal Notices.</p>
+          </div>
+          <div className="how-step p-8 bg-[#0B162E]/50 rounded-2xl border border-[#152142] hover:border-[#E87213]/50 transition-colors">
+            <h3 className="text-[#F5EDD8] text-xl mb-3 font-serif">eCourts Architecture</h3>
+            <p className="text-[#7A7E96] leading-relaxed text-sm">Optimized for all 24 Indian High Courts and the Supreme Court with complete BNS 2023 index coverage mapped seamlessly.</p>
+          </div>
+        </div>
+      </section>
+
       {/* ═══ CHAT DEMO ═══ */}
-      <div className="section demo-section">
+      <div className="section demo-section" style={{ paddingTop: 0 }}>
         <div className="demo-grid">
           <div className="demo-copy">
             <div className="eyebrow" data-fade>AI Document Chat</div>
