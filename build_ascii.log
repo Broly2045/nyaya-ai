@@ -1,0 +1,426 @@
+
+> nyaya-ai@0.1.0 build
+> next build
+
+??? Next.js 16.2.1 (Turbopack)
+- Environments: .env.local
+
+node.exe : ??? The 
+"middleware" file 
+convention is 
+deprecated. Please use 
+"proxy" instead. Learn 
+more: https://nextjs.or
+g/docs/messages/middlew
+are-to-proxy
+At C:\Users\ritwi\AppDa
+ta\Roaming\npm\npm.ps1:
+24 char:5
++     & "node$exe"  "$b
+asedir/node_modules/npm
+/bin/npm-cli.js" $args
++     ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (??? The "midd   
+ le...leware-to-pro    
+xy:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build 
+failed with 3 errors:
+./src/lib/groq.ts:87:19
+Unterminated template
+  [90m 85 |[0m       
+{
+  [90m 86 |[0m       
+  role: 
+[32m"system"[0m,
+[31m[1m>[0m [90m 
+87 |[0m         
+content: \[32m`You 
+are NyayaAI ??? an 
+expert Indian legal 
+assistant specializing 
+in the...[0m
+  [90m    |[0m       
+            [31m[1m^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^[0m
+[31m[1m>[0m [90m 
+88 |[0m
+  [90m    |[0m 
+[31m[1m^[0m
+[31m[1m>[0m [90m 
+89 |[0m [32mThe user 
+is asking about the 
+following 
+\${documentType} 
+document:[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
+[0m
+[31m[1m>[0m [90m 
+90 |[0m [32m---[0m
+  [90m    |[0m 
+[31m[1m^^^[0m
+[31m[1m>[0m [90m 
+91 |[0m [32m\${docume
+ntContext.substring(0, 
+6000)}[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 
+92 |[0m [32m---[0m
+  [90m    |[0m 
+[31m[1m^^^[0m
+[31m[1m>[0m [90m 
+93 |[0m
+  [90m    |[0m 
+[31m[1m^[0m
+[31m[1m>[0m [90m 
+94 |[0m 
+[32mGuidelines:[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 
+95 |[0m [32m- Answer 
+in the SAME LANGUAGE 
+as the user's question 
+(Hindi or English)[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^[0m
+[31m[1m>[0m [90m 
+96 |[0m [32m- For 
+Hindi responses, use 
+Devanagari script 
+naturally[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 
+97 |[0m [32m- Always 
+cite the specific 
+section of Indian law 
+(BNS, BNSS, CPC, ICA, 
+Constitution, etc.)[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^[0m
+[31m[1m>[0m [90m 
+98 |[0m [32m- 
+Reference specific 
+paragraphs/clauses 
+from the document when 
+answering[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^[0m
+[31m[1m>[0m [90m 
+99 |[0m [32m- 
+Mention relevant 
+landmark Indian 
+Supreme Court cases if 
+applicable[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^[0m
+[31m[1m>[0m 
+[90m100 |[0m [32m- 
+Flag any urgent 
+deadlines (limitation 
+periods, bail windows, 
+filing dates)[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^[0m
+[31m[1m>[0m 
+[90m101 |[0m [32m- 
+Always end with: 
+"?????? ???????????? 
+AI-?????????????????? 
+??????, ???????????? ??
+?????????????????????? 
+?????? 
+????????????????????? 
+??????????????? 
+????????????" (for 
+Hindi)[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m 
+[90m102 |[0m [32m  
+or "This is AI 
+assistance only. 
+Please consult a 
+qualified advocate." 
+(for English)\`,[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
+[0m
+[31m[1m>[0m 
+[90m103 |[0m [32m   
+   },[0m
+  [90m    |[0m 
+[31m[1m^^^^^^^^[0m
+[31m[1m>[0m 
+[90m104 |[0m [32m   
+   ...messages,[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^^[
+0m
+[31m[1m>[0m 
+[90m105 |[0m [32m   
+ ],[0m
+  [90m    |[0m 
+[31m[1m^^^^^^[0m
+[31m[1m>[0m 
+[90m106 |[0m [32m   
+ model: "llama-3.3-70b-
+versatile",[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m 
+[90m107 |[0m [32m   
+ stream: true,[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^[0
+m
+[31m[1m>[0m 
+[90m108 |[0m [32m   
+ temperature: 0.3,[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^^^^
+^[0m
+[31m[1m>[0m 
+[90m109 |[0m [32m   
+ max_tokens: 1500,[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^^^^
+^[0m
+[31m[1m>[0m 
+[90m110 |[0m [32m  
+});[0m
+  [90m    |[0m 
+[31m[1m^^^^^[0m
+[31m[1m>[0m 
+[90m111 |[0m 
+[32m};[0m
+  [90m    |[0m 
+[31m[1m^^[0m
+[31m[1m>[0m 
+[90m112 |[0m
+  [90m    |[0m 
+[31m[1m^[0m
+[31m[1m>[0m 
+[90m113 |[0m 
+[32mexport default 
+groq;[0m
+  [90m    |[0m [31m
+[1m^^^^^^^^^^^^^^^^^^^^
+[0m
+[31m[1m>[0m 
+[90m114 |[0m
+  [90m    |[0m 
+[31m[1m^[0m
+
+Parsing ecmascript 
+source code failed
+
+Import trace:
+  App Route:
+    ./src/lib/groq.ts
+    ./src/app/api/chat/
+route.ts
+
+
+./src/app/(auth)/login/
+page.tsx:8:1
+Module not found: 
+Can't resolve 
+'@/components/ui/input'
+  [90m 6 |[0m 
+[36mimport[0m 
+[33mLink[0m 
+[36mfrom[0m 
+[32m"next/link"[0m;
+  [90m 7 |[0m 
+[36mimport[0m { 
+[33mButton[0m } 
+[36mfrom[0m [32m"@/c
+omponents/ui/button"[0
+m;
+[31m[1m>[0m [90m 8 
+|[0m [36mimport[0m 
+{ [33mInput[0m } 
+[36mfrom[0m [32m"@/c
+omponents/ui/input"[0m
+;
+  [90m   |[0m [31m[
+1m^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^[0m
+  [90m 9 |[0m 
+[36mimport[0m { 
+[33mCard[0m, 
+[33mCardContent[0m, 
+[33mCardDescription[0m
+, [33mCardHeader[0m, 
+[33mCardTitle[0m } 
+[36mfrom[0m [32m"@/c
+omponents/ui...[0m
+  [90m10 |[0m
+  [90m11 |[0m 
+[36mexport[0m 
+[36mdefault[0m 
+[36mfunction[0m 
+[33mLoginPage[0m() {
+
+Import map: aliased to 
+relative './src/compone
+nts/ui/input' inside 
+of [project]/
+
+
+Import traces:
+  Client Component 
+Browser:
+    ./src/app/(auth)/lo
+gin/page.tsx [Client 
+Component Browser]
+    ./src/app/(auth)/lo
+gin/page.tsx [Server 
+Component]
+
+  Client Component SSR:
+    ./src/app/(auth)/lo
+gin/page.tsx [Client 
+Component SSR]
+    ./src/app/(auth)/lo
+gin/page.tsx [Server 
+Component]
+
+https://nextjs.org/docs
+/messages/module-not-fo
+und
+
+
+./src/app/(auth)/regist
+er/page.tsx:7:1
+Module not found: 
+Can't resolve 
+'@/components/ui/input'
+  [90m 5 |[0m 
+[36mimport[0m 
+[33mLink[0m 
+[36mfrom[0m 
+[32m"next/link"[0m;
+  [90m 6 |[0m 
+[36mimport[0m { 
+[33mButton[0m } 
+[36mfrom[0m [32m"@/c
+omponents/ui/button"[0
+m;
+[31m[1m>[0m [90m 7 
+|[0m [36mimport[0m 
+{ [33mInput[0m } 
+[36mfrom[0m [32m"@/c
+omponents/ui/input"[0m
+;
+  [90m   |[0m [31m[
+1m^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^[0m
+  [90m 8 |[0m 
+[36mimport[0m { 
+[33mCard[0m, 
+[33mCardContent[0m, 
+[33mCardDescription[0m
+, [33mCardHeader[0m, 
+[33mCardTitle[0m } 
+[36mfrom[0m [32m"@/c
+omponents/ui...[0m
+  [90m 9 |[0m
+  [90m10 |[0m 
+[36mexport[0m 
+[36mdefault[0m 
+[36mfunction[0m [33m
+RegisterPage[0m() {
+
+Import map: aliased to 
+relative './src/compone
+nts/ui/input' inside 
+of [project]/
+
+
+Import traces:
+  Client Component 
+Browser:
+    ./src/app/(auth)/re
+gister/page.tsx 
+[Client Component 
+Browser]
+    ./src/app/(auth)/re
+gister/page.tsx 
+[Server Component]
+
+  Client Component SSR:
+    ./src/app/(auth)/re
+gister/page.tsx 
+[Client Component SSR]
+    ./src/app/(auth)/re
+gister/page.tsx 
+[Server Component]
+
+https://nextjs.org/docs
+/messages/module-not-fo
+und
+
+
+    at <unknown> (./src
+/lib/groq.ts:87:19)
+    at <unknown> (./src
+/app/(auth)/login/page.
+tsx:8:1)
+    at <unknown> (https
+://nextjs.org/docs/mess
+ages/module-not-found)
+    at <unknown> (./src
+/app/(auth)/register/pa
+ge.tsx:7:1)
+    at <unknown> (https
+://nextjs.org/docs/mess
+ages/module-not-found)
