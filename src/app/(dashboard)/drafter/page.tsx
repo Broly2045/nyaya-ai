@@ -88,76 +88,80 @@ export default function LegalDrafterPage() {
   };
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto">
-      <div className="flex items-center space-x-3 mb-6">
-        <div className="w-12 h-12 rounded-xl bg-[#E87213]/10 flex items-center justify-center border border-[#E87213]/30">
-          <PenTool className="w-6 h-6 text-[#E87213]" />
+    <div className="space-y-6 max-w-[1600px] mx-auto pb-10">
+      {/* Header */}
+      <div className="flex items-center space-x-4 mb-8">
+        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#E87213]/20 to-[#E87213]/5 flex items-center justify-center border border-[#E87213]/30 shadow-[0_0_20px_rgba(232,114,19,0.1)]">
+          <PenTool className="w-7 h-7 text-[#E87213]" />
         </div>
         <div>
-          <h1 className="text-3xl font-bold font-serif text-[#F5EDD8]">AI Legal Drafter</h1>
-          <p className="text-[#7A7E96]">Enter case facts to generate beautifully structured Indian legal documents.</p>
+          <h1 className="text-3xl font-bold font-serif text-[#F5EDD8] tracking-wide">AI Legal Drafter</h1>
+          <p className="text-[#7A7E96] mt-1 text-sm">Enter case facts to auto-generate court-ready Indian legal documents.</p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Form Panel */}
-        <div className="lg:col-span-5 h-full">
-          <Card className="bg-[#0B162E]/50 border-[#152142] text-[#F5EDD8] h-full shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-lg flex items-center">
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 h-[calc(100vh-140px)] min-h-[800px]">
+        {/* Left Panel - The Intake Form */}
+        <div className="xl:col-span-4 h-full">
+          <Card className="bg-[#0B162E]/60 backdrop-blur-xl border-[#152142] text-[#F5EDD8] h-full shadow-2xl flex flex-col overflow-hidden">
+            <CardHeader className="border-b border-[#152142]/50 bg-[#0B162E]/40 pb-4">
+              <CardTitle className="text-lg flex items-center font-serif tracking-wide text-[#F5EDD8]">
                 <Sparkles className="w-4 h-4 mr-2 text-[#E87213]" />
-                Case Details
+                Case Intake
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <form onSubmit={generateDraft} className="space-y-4">
-                <div className="space-y-1.5">
-                  <label className="text-sm text-[#7A7E96] font-medium">Document Type</label>
+            <CardContent className="flex-1 overflow-y-auto p-6 custom-scrollbar">
+              <form onSubmit={generateDraft} className="space-y-5">
+                <div className="space-y-2">
+                  <label className="text-[0.8rem] uppercase tracking-wider text-[#7A7E96] font-semibold">Document Type</label>
                   <Input 
                     value={form.documentType}
                     onChange={(e) => setForm({...form, documentType: e.target.value})}
-                    placeholder="e.g. Bail Application, Writ Petition, Legal Notice"
-                    className="bg-[#152142]/50 border-[#2A3454] text-[#F5EDD8]"
+                    placeholder="e.g. Bail Application, Writ Petition"
+                    className="bg-[#060F24]/50 border-[#1C2D54] text-[#F5EDD8] h-11 focus:border-[#E87213]/50 focus:ring-1 focus:ring-[#E87213]/50 transition-all placeholder:text-[#4A4E69]"
                   />
                 </div>
 
-                <div className="space-y-1.5">
-                  <label className="text-sm text-[#7A7E96] font-medium">Jurisdiction / Court Name</label>
+                <div className="space-y-2">
+                  <label className="text-[0.8rem] uppercase tracking-wider text-[#7A7E96] font-semibold">Jurisdiction / Court</label>
                   <Input 
                     value={form.jurisdiction}
                     onChange={(e) => setForm({...form, jurisdiction: e.target.value})}
-                    placeholder="e.g. In The Hon'ble High Court of Delhi"
-                    className="bg-[#152142]/50 border-[#2A3454] text-[#F5EDD8]"
+                    placeholder="e.g. Hon'ble High Court of Delhi"
+                    className="bg-[#060F24]/50 border-[#1C2D54] text-[#F5EDD8] h-11 focus:border-[#E87213]/50 focus:ring-1 focus:ring-[#E87213]/50 transition-all placeholder:text-[#4A4E69]"
                   />
                 </div>
 
-                <div className="space-y-1.5">
-                  <label className="text-sm text-[#7A7E96] font-medium">Parties Involved</label>
+                <div className="space-y-2">
+                  <label className="text-[0.8rem] uppercase tracking-wider text-[#7A7E96] font-semibold">Parties Involved</label>
                   <textarea 
                     value={form.partyDetails}
                     onChange={(e) => setForm({...form, partyDetails: e.target.value})}
-                    placeholder="Ramesh Kumar ... Petitioner \n VS \n State of Delhi ... Respondent"
-                    className="w-full h-24 p-3 bg-[#152142]/50 border border-[#2A3454] rounded-md text-[#F5EDD8] placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E87213]/50 text-sm"
+                    placeholder="Ramesh Kumar ... Petitioner &#10; VS &#10; State of Delhi ... Respondent"
+                    className="w-full min-h-[100px] p-3 bg-[#060F24]/50 border border-[#1C2D54] rounded-md text-[#F5EDD8] placeholder:text-[#4A4E69] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E87213]/50 focus-visible:border-[#E87213]/50 text-sm transition-all resize-none custom-scrollbar"
                   />
                 </div>
 
-                <div className="space-y-1.5">
-                  <label className="text-sm text-[#7A7E96] font-medium">Core Case Facts</label>
+                <div className="space-y-2">
+                  <label className="text-[0.8rem] uppercase tracking-wider text-[#7A7E96] font-semibold flex items-center justify-between">
+                    <span>Core Case Facts</span>
+                    <span className="text-xs text-[#E87213]/70 normal-case font-normal italic">Be highly detailed</span>
+                  </label>
                   <textarea 
                     value={form.facts}
                     onChange={(e) => setForm({...form, facts: e.target.value})}
-                    placeholder="Provide a detailed timeline of events, dates, charges, and why the relief should be granted..."
-                    className="w-full h-48 p-3 bg-[#152142]/50 border border-[#2A3454] rounded-md text-[#F5EDD8] placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E87213]/50 text-sm"
+                    placeholder="Provide a chronological timeline of events, dates, charges levied, and explicitly state why the court should grant the relief requested..."
+                    className="w-full min-h-[220px] h-full p-4 bg-[#060F24]/50 border border-[#1C2D54] rounded-md text-[#F5EDD8] placeholder:text-[#4A4E69] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E87213]/50 focus-visible:border-[#E87213]/50 text-sm transition-all resize-y custom-scrollbar leading-relaxed"
                   />
                 </div>
 
                 <Button 
                   type="submit" 
                   disabled={loading || !form.facts.trim()} 
-                  className="w-full bg-[#E87213] hover:bg-[#C8BDA4] text-[#060F24] font-semibold"
+                  className="w-full h-12 bg-gradient-to-r from-[#E87213] to-[#D0610A] hover:from-[#F08020] hover:to-[#E87213] text-white font-semibold transition-all shadow-[0_0_15px_rgba(232,114,19,0.3)] hover:shadow-[0_0_25px_rgba(232,114,19,0.5)] border-none"
                 >
                   {loading ? (
-                     <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Drafting...</>
+                     <><Loader2 className="w-5 h-5 mr-2 animate-spin" /> Drafting Document...</>
                   ) : (
                      <><PenTool className="w-4 h-4 mr-2" /> Generate Legal Draft</>
                   )}
@@ -167,46 +171,52 @@ export default function LegalDrafterPage() {
           </Card>
         </div>
 
-        {/* Output Panel */}
-        <div className="lg:col-span-7 h-full flex flex-col">
-          <Card className="bg-[#white] border-[#152142] text-[#060F24] flex-1 min-h-[600px] shadow-2xl relative overflow-hidden flex flex-col">
-            <div className="bg-[#f0ece1] border-b border-[#ddd] p-3 flex justify-between items-center z-10">
-              <span className="text-sm font-semibold uppercase tracking-wider text-[#555] font-sans">
-                Draft Preview
-              </span>
-              <div className="space-x-2">
-                 <Button variant="outline" size="sm" onClick={copyToClipboard} className="h-8 bg-white border-[#ccc] text-[#333] hover:bg-[#eae8df]">
-                   <Copy className="w-3.5 h-3.5 mr-1" /> Copy
-                 </Button>
-                 <Button variant="outline" size="sm" onClick={downloadAsTxt} className="h-8 bg-white border-[#ccc] text-[#333] hover:bg-[#eae8df]">
-                   <Download className="w-3.5 h-3.5 mr-1" /> Download .txt
-                 </Button>
+        {/* Right Panel - The Canvas Container */}
+        <div className="xl:col-span-8 h-full flex justify-center items-start overflow-y-auto custom-scrollbar px-2 pb-10">
+          
+          {/* Floating Workspace Controls */}
+          <div className="fixed top-8 right-10 flex space-x-2 z-50">
+             <Button variant="outline" size="sm" onClick={copyToClipboard} className="h-10 bg-[#0B162E]/80 backdrop-blur-md border-[#152142] text-[#F5EDD8] hover:bg-[#152142] hover:text-[#E87213] transition-colors rounded-full px-5 shadow-2xl">
+               <Copy className="w-4 h-4 mr-2" /> Copy text
+             </Button>
+             <Button variant="outline" size="sm" onClick={downloadAsTxt} className="h-10 bg-[#0B162E]/80 backdrop-blur-md border-[#152142] text-[#F5EDD8] hover:bg-[#152142] hover:text-[#E87213] transition-colors rounded-full px-5 shadow-2xl">
+               <Download className="w-4 h-4 mr-2" /> Download .txt
+             </Button>
+          </div>
+
+          {/* The Actual "Paper" Canvas */}
+          <div className="relative w-full max-w-[850px] min-h-[1056px] bg-[#FDFCF8] rounded-sm shadow-[0_20px_50px_rgba(0,0,0,0.5)] mt-4 p-12 sm:p-20 transition-all duration-500 overflow-hidden transform-gpu">
+            
+            {/* Legal paper margin lines (Indian standard style) */}
+            <div className="absolute left-10 top-0 bottom-0 w-px bg-red-600/20 shadow-[1px_0_0_rgba(220,38,38,0.05)] pointer-events-none" />
+            <div className="absolute left-12 top-0 bottom-0 w-px bg-red-600/20 shadow-[1px_0_0_rgba(220,38,38,0.05)] pointer-events-none" />
+            
+            {/* Empty State */}
+            {!draft && !loading && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-12 backdrop-blur-[1px]">
+                 <div className="w-20 h-20 rounded-full bg-slate-100 flex items-center justify-center mb-6 shadow-inner">
+                    <PenTool className="w-8 h-8 text-slate-300" />
+                 </div>
+                 <h3 className="text-2xl font-serif text-slate-700 mb-2">Blank Canvas</h3>
+                 <p className="text-slate-400 max-w-sm leading-relaxed">
+                   Fill out the case facts on the intake form and click "Generate". NyayaAI will formulate a court-ready document right here.
+                 </p>
               </div>
-            </div>
+            )}
+
+            {/* Generated Text Container */}
+            {(draft || loading) && (
+              <div className="font-serif text-[1rem] leading-[2] text-slate-900 whitespace-pre-wrap ml-6 relative z-10 selection:bg-orange-200">
+                {draft}
+                
+                {/* Typing cursor/indicator */}
+                {loading && (
+                  <span className="inline-block w-2.5 h-4 ml-1 bg-[#E87213] animate-pulse rounded-sm align-middle" />
+                )}
+              </div>
+            )}
             
-            <div className="flex-1 overflow-auto p-8 relative">
-               {!draft && !loading ? (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-                     <div className="w-16 h-16 rounded-full bg-[#f0ece1] flex items-center justify-center mb-4">
-                        <PenTool className="w-8 h-8 text-[#aaa]" />
-                     </div>
-                     <p className="text-[#888] max-w-sm">
-                       Fill out the case facts on the left and click "Generate" to see the AI formulate a court-ready document in seconds.
-                     </p>
-                  </div>
-               ) : (
-                  <div 
-                    className="font-serif text-[0.95rem] leading-[1.8] text-[#111] max-w-[800px] mx-auto whitespace-pre-wrap pb-16"
-                  >
-                    {draft}
-                  </div>
-               )}
-            </div>
-            
-            {/* Elegant legal paper edge styling */}
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-red-200 pointer-events-none" />
-            <div className="absolute left-8 top-0 bottom-0 w-px bg-red-200 pointer-events-none" />
-          </Card>
+          </div>
         </div>
       </div>
     </div>
