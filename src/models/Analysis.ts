@@ -22,6 +22,9 @@ export interface IAnalysisDoc extends Document {
   courtHierarchy?: string;
   cnrNumber?: string;
   overallRiskLevel: "low" | "medium" | "high";
+  overallRiskScore?: number;
+  keyFindings?: Record<string, unknown>[];
+  sections?: Record<string, unknown>[];
   limitationPeriodConcern: boolean;
   fundamentalRightsConcern: boolean;
   processingTimeMs: number;
@@ -36,7 +39,7 @@ const ClauseSchema = new Schema<IClause>({
   indianLawRef: String,
 });
 
-const AnalysisSchema = new Schema<any>(
+const AnalysisSchema = new Schema<IAnalysisDoc>(
   {
     documentId: {
       type: Schema.Types.ObjectId,

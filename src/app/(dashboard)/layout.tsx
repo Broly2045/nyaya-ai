@@ -12,7 +12,7 @@ export default async function DashboardLayout({
 
   return (
     <div className="flex h-screen overflow-hidden" style={{ background: "var(--midnight)" }}>
-      <Sidebar user={session.user as any} />
+      <Sidebar user={session.user as { name: string; email: string; image?: string; id?: string; subscription: string }} />
       <main
         className="flex-1 overflow-auto p-8"
         style={{ background: "#060F24" }}

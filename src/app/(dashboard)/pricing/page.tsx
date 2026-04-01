@@ -28,7 +28,7 @@ export default function PricingPage() {
         const data = await res.json();
         toast.error(data.message || "Upgrade failed");
       }
-    } catch (err) {
+    } catch {
       toast.error("An error occurred while upgrading.");
     } finally {
       setLoading(null);

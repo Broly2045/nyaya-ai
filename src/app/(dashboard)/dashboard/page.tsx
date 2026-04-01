@@ -5,7 +5,7 @@ import Analysis from "@/models/Analysis";
 import User from "@/models/User";
 import { FileText, ArrowRight, ShieldAlert, Sparkles, FolderOpen, Loader2, Plus, CreditCard } from "lucide-react";
 import Link from "next/link";
-import mongoose from "mongoose";
+
 import DeleteDocumentButton from "@/components/dashboard/DeleteDocumentButton";
 
 function getGreeting() {
@@ -47,7 +47,7 @@ export default async function DashboardPage() {
           <h1 className="font-serif text-3xl md:text-4xl text-[#F5EDD8] tracking-tight">
             {greeting}, {firstName}
           </h1>
-          <p className="text-[#7A7E96] mt-2 font-medium">Here's your legal workspace overview.</p>
+          <p className="text-[#7A7E96] mt-2 font-medium">Here&apos;s your legal workspace overview.</p>
         </div>
         
         <div className="flex flex-wrap items-center gap-3">
@@ -119,7 +119,7 @@ export default async function DashboardPage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {recentDocs.map((doc: any) => (
+            {recentDocs.map((doc: { _id: { toString: () => string }; status: string; title?: string; fileName?: string; createdAt: string | number | Date }) => (
               <Link href={`/documents/${doc._id}`} key={doc._id.toString()}>
                 <div className="group bg-[#0B162E]/80 backdrop-blur-sm border border-[#152142] p-5 rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-[#E87213]/5 hover:border-[#1C2D54] hover:-translate-y-1 relative overflow-hidden h-full flex flex-col">
                   

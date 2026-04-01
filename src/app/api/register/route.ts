@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const user = await User.create({
+    await User.create({
       name,
       email: email.toLowerCase(),
       password: hashedPassword,
@@ -31,8 +31,8 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ message: "User created successfully" }, { status: 201 });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Registration error:", error);
-    return NextResponse.json({ message: "Server error", error: error?.message || "Unknown error" }, { status: 500 });
+    return NextResponse.json({ message: "Server error", error: (error as Error)?.message || "Unknown error" }, { status: 500 });
   }
 }

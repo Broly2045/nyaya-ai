@@ -69,11 +69,12 @@ export async function POST(req: NextRequest) {
         const buffer = Buffer.from(arrayBuffer);
 
         if (document.fileType === "pdf" || document.fileUrl.toLowerCase().endsWith(".pdf")) {
+          // eslint-disable-next-line @typescript-eslint/no-require-imports
           const PDFParser = require("pdf2json");
           const pdfParser = new PDFParser(null, 1);
           
           textToAnalyze = await new Promise<string>((resolve, reject) => {
-            pdfParser.on("pdfParser_dataError", (errData: any) => reject(errData.parserError));
+            pdfParser.on("pdfParser_dataError", (errData: { parserError: Error | string }) => reject(errData.parserError));
             pdfParser.on("pdfParser_dataReady", () => resolve(decodeURIComponent(pdfParser.getRawTextContent())));
             pdfParser.parseBuffer(buffer);
           });
@@ -87,7 +88,7 @@ export async function POST(req: NextRequest) {
         } else {
           throw new Error("Extracted text is empty");
         }
-      } catch (err: any) {
+      } catch (err) {
         console.error("JIT Text Extraction failed:", err);
         return NextResponse.json(
           { success: false, message: "Could not extract text from document for analysis." },

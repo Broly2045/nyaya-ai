@@ -66,8 +66,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           }
         } else {
           token.id = user.id;
-          token.role = (user as any).role ?? "user";
-          token.subscription = (user as any).subscription ?? "free";
+          token.role = (user as { role?: string }).role ?? "user";
+          token.subscription = (user as { subscription?: string }).subscription ?? "free";
         }
       }
 
@@ -87,8 +87,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     async session({ session, token }) {
       if (session.user) {
         session.user.id = token.id as string;
-        (session.user as any).role = token.role;
-        (session.user as any).subscription = token.subscription;
+        (session.user as { role?: unknown }).role = token.role;
+        (session.user as { subscription?: unknown }).subscription = token.subscription;
       }
       return session;
     },

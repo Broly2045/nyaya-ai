@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const pdfParseModule = require("pdf-parse");
 
 console.log("Type of pdfParseModule:", typeof pdfParseModule);

@@ -9,7 +9,7 @@ import { ApiResponse, IDocument } from "@/types";
 
 // GET /api/documents — fetch user's documents
 export async function GET(
-  req: NextRequest
+  _req: NextRequest
 ): Promise<NextResponse<ApiResponse<IDocument[]>>> {
   try {
     const session = await auth();
@@ -143,11 +143,12 @@ export async function POST(
     let textContent = "";
     try {
       if (fileType === "pdf") {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
         const PDFParser = require("pdf2json");
         const pdfParser = new PDFParser(null, 1);
         
         textContent = await new Promise<string>((resolve, reject) => {
-          pdfParser.on("pdfParser_dataError", (errData: any) => reject(errData.parserError));
+          pdfParser.on("pdfParser_dataError", (errData: { parserError: Error | string }) => reject(errData.parserError));
           pdfParser.on("pdfParser_dataReady", () => resolve(decodeURIComponent(pdfParser.getRawTextContent())));
           pdfParser.parseBuffer(buffer);
         });

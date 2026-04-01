@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2, FileSearch, AlertCircle } from "lucide-react";
 
-export default function AnalysisRunner({ documentId, fileName }: { documentId: string, fileName: string }) {
+export default function AnalysisRunner({ documentId, fileName: _fileName }: { documentId: string, fileName: string }) {
   const [status, setStatus] = useState("Initializing Llama 3.3 Engine...");
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
@@ -37,8 +37,8 @@ export default function AnalysisRunner({ documentId, fileName }: { documentId: s
           if (isMounted) router.refresh();
         }, 1000);
 
-      } catch (err: any) {
-        if (isMounted) setError(err.message);
+      } catch (err) {
+        if (isMounted) setError((err as Error).message);
       }
     };
 

@@ -84,7 +84,7 @@ export default async function DocumentAnalysisPage({ params }: { params: Promise
               </h3>
               
               <div className="flex flex-col gap-4 mb-10">
-                {(analysis.keyFindings || []).map((finding: any, idx: number) => (
+                {(analysis.keyFindings || []).map((finding: { severity: string; text: string }, idx: number) => (
                   <div key={idx} className={`flex gap-4 items-start bg-[#0B162E]/60 backdrop-blur-sm p-5 md:p-6 rounded-lg border-l-4 transition-transform hover:-translate-y-0.5 ${
                     finding.severity === "high" ? "border-l-[#D94F4F] shadow-sm shadow-[#D94F4F]/5" : 
                     finding.severity === "medium" ? "border-l-[#D4820A] shadow-sm shadow-[#D4820A]/5" : 
@@ -120,11 +120,11 @@ export default async function DocumentAnalysisPage({ params }: { params: Promise
               </h3>
               
               <div className="space-y-6">
-                {(analysis.sections || []).map((sec: any, idx: number) => (
+                {(analysis.sections || []).map((sec: { sectionId?: string; title?: string; text?: string; content?: string }, idx: number) => (
                   <div key={idx} className="pl-5 border-l-2 border-[#1C2D54] hover:border-[#E87213] transition-colors relative">
                     <div className="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-[#1C2D54]"></div>
                     <h4 className="font-serif text-[1.1rem] text-[#C8BDA4] mb-2">{sec.sectionId || sec.title || "Section"}</h4>
-                    <p className="text-[0.9rem] text-[#7A7E96] leading-relaxed m-0 italic">"{sec.text || sec.content}"</p>
+                    <p className="text-[0.9rem] text-[#7A7E96] leading-relaxed m-0 italic">&quot;{sec.text || sec.content}&quot;</p>
                   </div>
                 ))}
               </div>

@@ -65,12 +65,12 @@ export default async function DocumentsPage() {
           <FolderOpen className="w-16 h-16 text-[#152142] mb-4" />
           <h3 className="text-xl font-serif text-[#F5EDD8] mb-2">Your Vault is Empty</h3>
           <p className="text-[#7A7E96] text-sm max-w-sm">
-            You haven't uploaded any documents yet. Drop a PDF or DOCX file above to begin your structural analysis.
+            You haven&apos;t uploaded any documents yet. Drop a PDF or DOCX file above to begin your structural analysis.
           </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pb-8">
-          {documents.map((doc: any) => (
+          {documents.map((doc: { _id: { toString: () => string }; status: string; title?: string; fileName?: string; createdAt: string | number | Date }) => (
             <Link href={`/documents/${doc._id}`} key={doc._id.toString()}>
               <div className="group bg-[#0B162E]/80 backdrop-blur-sm border border-[#152142] p-5 rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-[#E87213]/5 hover:border-[#1C2D54] hover:-translate-y-1 relative overflow-hidden h-full flex flex-col">
                 

@@ -65,8 +65,8 @@ export default function LegalDrafterPage() {
           }
         }
       }
-    } catch (err: any) {
-      toast.error(err.message || "Something went wrong.");
+    } catch (err) {
+      toast.error((err as Error)?.message || "Something went wrong.");
     } finally {
       setLoading(false);
     }
@@ -199,7 +199,7 @@ export default function LegalDrafterPage() {
                  </div>
                  <h3 className="text-2xl font-serif text-slate-700 mb-2">Blank Canvas</h3>
                  <p className="text-slate-400 max-w-sm leading-relaxed">
-                   Fill out the case facts on the intake form and click "Generate". NyayaAI will formulate a court-ready document right here.
+                   Fill out the case facts on the intake form and click &quot;Generate&quot;. NyayaAI will formulate a court-ready document right here.
                  </p>
               </div>
             )}

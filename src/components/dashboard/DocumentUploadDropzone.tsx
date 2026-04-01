@@ -33,9 +33,9 @@ export default function DocumentUploadDropzone() {
 
       // Refresh the page to show the new document in the list
       router.refresh();
-    } catch (err: any) {
+    } catch (err) {
       console.error(err);
-      setError(err.message);
+      setError((err as Error).message);
     } finally {
       setIsUploading(false);
     }

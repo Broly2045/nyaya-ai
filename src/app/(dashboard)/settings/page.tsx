@@ -2,6 +2,7 @@ import { auth } from "@/lib/auth";
 import { connectToDatabase } from "@/lib/mongodb";
 import User from "@/models/User";
 import { UserCircle, Shield, CreditCard, LogOut, Settings as SettingsIcon } from "lucide-react";
+import Link from "next/link";
 
 export default async function SettingsPage() {
   const session = await auth();
@@ -108,7 +109,7 @@ export default async function SettingsPage() {
           </div>
 
           <div style={{ marginTop: "2rem", paddingTop: "1.5rem", borderTop: "1px solid #152142" }}>
-             <a href="/pricing" style={{
+             <Link href="/pricing" style={{
                 display: "inline-flex",
                 alignItems: "center",
                 gap: ".5rem",
@@ -125,7 +126,7 @@ export default async function SettingsPage() {
                 textDecoration: "none"
               }}>
                 <CreditCard size={14} /> Upgrade Plan
-              </a>
+              </Link>
           </div>
         </div>
 
@@ -143,7 +144,7 @@ export default async function SettingsPage() {
           <p style={{ color: "#7A7E96", fontSize: ".8rem", marginBottom: "1.5rem" }}>
             If you log out, you will need to sign back in with your Google account.
           </p>
-          <a href="/api/auth/signout" style={{
+          <Link href="/api/auth/signout" prefetch={false} style={{
             display: "inline-flex",
             alignItems: "center",
             gap: ".5rem",
@@ -160,7 +161,7 @@ export default async function SettingsPage() {
             textDecoration: "none"
           }}>
             <LogOut size={14} /> Sign Out
-          </a>
+          </Link>
         </div>
       </div>
     </div>

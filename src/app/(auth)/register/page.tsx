@@ -49,7 +49,7 @@ export default function RegisterPage() {
         const resData = await res.json();
         setError(resData.error ? `${resData.message}: ${resData.error}` : resData.message || "Registration failed");
       }
-    } catch (err) {
+    } catch {
       setError("An error occurred during registration");
     } finally {
       setLoading(false);
@@ -91,7 +91,7 @@ export default function RegisterPage() {
                 <FormField
                   control={form.control}
                   name="name"
-                  render={({ field }: { field: any }) => (
+                  render={({ field }) => (
                     <FormItem>
                       <FormControl>
                         <div className="relative group">
@@ -111,7 +111,7 @@ export default function RegisterPage() {
                 <FormField
                   control={form.control}
                   name="email"
-                  render={({ field }: { field: any }) => (
+                  render={({ field }) => (
                     <FormItem>
                       <FormControl>
                         <div className="relative group">
@@ -131,7 +131,7 @@ export default function RegisterPage() {
                 <FormField
                   control={form.control}
                   name="password"
-                  render={({ field }: { field: any }) => (
+                  render={({ field }) => (
                     <FormItem>
                       <FormControl>
                         <div className="relative group">

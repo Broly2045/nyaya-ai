@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
             );
           }
         }
-      } catch (err) {
+      } catch {
         controller.enqueue(
           encoder.encode(
             `data: ${JSON.stringify({ error: "Stream error" })}\n\n`

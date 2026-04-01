@@ -49,7 +49,7 @@ export default function LoginPage() {
         router.push("/dashboard");
         router.refresh();
       }
-    } catch (err) {
+    } catch {
       setError("An error occurred during login");
     } finally {
       setLoading(false);
@@ -91,7 +91,7 @@ export default function LoginPage() {
                 <FormField
                   control={form.control}
                   name="email"
-                  render={({ field }: { field: any }) => (
+                  render={({ field }) => (
                     <FormItem>
                       <FormControl>
                         <div className="relative group">
@@ -111,7 +111,7 @@ export default function LoginPage() {
                 <FormField
                   control={form.control}
                   name="password"
-                  render={({ field }: { field: any }) => (
+                  render={({ field }) => (
                     <FormItem>
                       <FormControl>
                         <div className="relative group">
@@ -198,7 +198,7 @@ export default function LoginPage() {
             </div>
 
             <div className="mt-8 text-center text-sm text-[#7A7E96]">
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <Link href="/register" className="text-[#E87213] hover:text-[#F5EDD8] transition-colors font-medium border-b border-transparent hover:border-[#F5EDD8]">
                 Create one now
               </Link>
