@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, FileText, Settings, Sparkles } from "lucide-react";
+import { LayoutDashboard, FileText, Settings, Sparkles, PenTool } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface UserProp {
@@ -18,6 +18,7 @@ export default function Sidebar({ user }: { user: UserProp }) {
   const links = [
     { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
     { href: "/documents", label: "My Documents", icon: FileText },
+    { href: "/drafter", label: "AI Legal Drafter", icon: PenTool },
     { href: "/pricing", label: "Pricing / Upgrade", icon: Sparkles },
     { href: "/settings", label: "Settings", icon: Settings },
   ];

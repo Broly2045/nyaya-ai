@@ -105,4 +105,42 @@ Guidelines:
   });
 };
 
+// ── Streaming Legal Drafter ──
+export const streamLegalDraft = async (
+  documentType: string,
+  jurisdiction: string,
+  partyDetails: string,
+  facts: string
+) => {
+  return groq.chat.completions.create({
+    messages: [
+      {
+        role: "system",
+        content: `You are NyayaAI — a Senior Advocate practicing in the Indian Supreme Court and High Courts. 
+Your task is to draft a fully formatted, professional Indian legal document.
+
+DOCUMENT TYPE: ${documentType}
+JURISDICTION/COURT: ${jurisdiction}
+
+Guidelines for drafting:
+1. Start with the appropriate Court Heading (e.g., "IN THE HON'BLE HIGH COURT OF...").
+2. Include placeholder Cause Title (e.g., "[Party A] ... Petitioner VS [Party B] ... Respondent").
+3. Use formal, persuasive Indian legal parlance (e.g., "Humbly Showeth", "It is respectfully submitted").
+4. Integrate the provided FACTS logically into sequentially numbered paragraphs.
+5. Provide relevant statutory citations (BNS 2023, BNSS 2023, CPC, Constitution) based on the facts to make the draft legally sound.
+6. End with a formal 'Prayer' clause and verification/signature block.
+7. Format the output ENTIRELY in beautiful Markdown. Do NOT wrap the response in a json block. Respond ONLY with the markdown document.`
+      },
+      {
+        role: "user",
+        content: `PARTIES INVOLVED:\n${partyDetails}\n\nCASE FACTS:\n${facts}\n\nPlease draft the ${documentType}.`
+      }
+    ],
+    model: "llama-3.3-70b-versatile",
+    stream: true,
+    temperature: 0.4,
+    max_tokens: 4000,
+  });
+};
+
 export default groq;

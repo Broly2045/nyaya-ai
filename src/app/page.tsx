@@ -94,7 +94,7 @@ export default function LandingPage() {
           </h1>
 
           <p className="hero-sub">
-            Upload any Indian legal document — FIR, bail application, vakalatnama, writ petition, or contract. NyayaAI reads every clause against IPC, CrPC, CPC, and the Constitution. Get a plain-language brief in seconds.
+            Upload any Indian legal document — FIR, bail application, vakalatnama, writ petition, or contract. NyayaAI reads every clause against IPC, BNS, BNSS, CPC, and the Constitution. Get a plain-language brief in seconds, or let our AI autonomously draft new court-ready legal documents for you.
           </p>
 
           <div className="hero-actions">
@@ -387,6 +387,30 @@ export default function LandingPage() {
                   Yeh right <em>indefeasible</em> hai — Supreme Court ne <em>Rakesh Kumar Paul v. State of Assam</em> mein confirm kiya hai ki court ise deny nahi kar sakti.<span className="cursor"></span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ═══ DRAFTER DEMO ═══ */}
+      <div className="section demo-section" style={{ background: "linear-gradient(to bottom, transparent, rgba(21, 33, 66, 0.2), transparent)", paddingTop: "2rem" }}>
+        <div className="demo-grid" style={{ gridTemplateColumns: "1fr", textAlign: "center", maxWidth: "800px", margin: "0 auto" }}>
+          <div className="demo-copy">
+            <div className="eyebrow" data-fade>Autonomous AI Drafting</div>
+            <h2 className="section-title" data-fade style={{ fontSize: "2.5rem" }}>Type the facts.<br />Generate the document.</h2>
+            <p style={{ color: "var(--cream2)", lineHeight: 1.8, marginTop: "1rem", fontSize: ".92rem", maxWidth: "600px", margin: "1rem auto 0 auto" }} data-fade>
+              Don't just analyze legal documents—create them. Provide NyayaAI with the basic facts of your case, the involved parties, and target jurisdiction. Our AI will instantly stream a fully-formatted, court-ready Bail Application, Legal Notice, or Petition cited appropriately under Indian Law.
+            </p>
+            <div className="mt-10" data-fade>
+               <div className="doc-card" style={{ maxWidth: "600px", margin: "0 auto", textAlign: "left", padding: "1.5rem" }}>
+                 <div className="status-badge" style={{ display: "inline-block", marginBottom: "1rem", background: "rgba(232, 114, 19, 0.1)", color: "#E87213" }}>AI Streaming...</div>
+                 <div className="clause-title uppercase tracking-widest text-[#7A7E96] text-[0.65rem] mb-4 text-center pb-2 border-b border-[#2A3454]">In the Hon'ble High Court of Delhi at New Delhi</div>
+                 <div className="clause-title font-serif text-[#F5EDD8] font-semibold text-center mb-6">Bail Application No. _____ of 2026</div>
+                 <div className="clause-text leading-loose text-sm text-[#C8BDA4]"><strong>MAY IT PLEASE YOUR LORDSHIP:</strong><br/><br/>1. That the applicant is a law-abiding citizen with deep roots in society, falsely implicated in FIR No. 45/2026 registered at PS Hauz Khas under sections 378/379 of the Bharatiya Nyaya Sanhita, 2023. <br/><br/>2. That it is respectfully submitted that the ingredients of the alleged offence are squarely not made out from a bare perusal of the FIR...</div>
+                 <div className="mt-4 pt-4 border-t border-[#152142] text-center">
+                    <span className="text-[#E87213] text-sm animate-pulse font-medium">Drafting continues...</span>
+                 </div>
+               </div>
             </div>
           </div>
         </div>
